@@ -1,0 +1,9 @@
+name: LuckyChest
+description: LuckyChest
+main: com.connorlinfoot.luckychest.Main
+version: 1.0
+author: ConnorLinfoot
+website: http://connorlinfoot.com
+permissions:
+  luckychest.use:
+    default: false

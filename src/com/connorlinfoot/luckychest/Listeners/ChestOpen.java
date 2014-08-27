@@ -20,6 +20,12 @@ public class ChestOpen implements Listener {
                 e.getInventory().clear();
                 com.connorlinfoot.luckychest.Handlers.Chest.get().populateChest(chest);
             }
+
+            if( e.getInventory().getItem(27) == null  || e.getInventory().getItem(27).getType() == Material.AIR ) return;
+            if( e.getInventory().getItem(27).getItemMeta().getDisplayName().equalsIgnoreCase("LuckyChest") ){
+                e.getInventory().clear();
+                com.connorlinfoot.luckychest.Handlers.Chest.get().populateChest(chest);
+            }
         }
     }
 

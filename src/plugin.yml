@@ -1,7 +1,7 @@
 name: LuckyChest
 description: LuckyChest
 main: com.connorlinfoot.luckychest.Main
-version: 1.2
+version: 1.2.1
 author: ConnorLinfoot
 website: http://connorlinfoot.com
 permissions:

@@ -26,23 +26,21 @@ public class Main extends JavaPlugin implements Listener {
         Server server = getServer();
         ConsoleCommandSender console = server.getConsoleSender();
 
-        if( getConfig().getBoolean("Enabled") ) {
-            console.sendMessage(ChatColor.GREEN + "============ LuckyChest ============");
-            console.sendMessage(ChatColor.GREEN + "=========== VERSION: 1.2 ===========");
-            console.sendMessage(ChatColor.GREEN + "======== BY CONNOR LINFOOT! ========");
+        console.sendMessage(ChatColor.GREEN + "============ LuckyChest ============");
+        console.sendMessage(ChatColor.GREEN + "========== VERSION: 1.2.1 ==========");
+        console.sendMessage(ChatColor.GREEN + "======== BY CONNOR LINFOOT! ========");
 
-            if( getConfig().getInt("Config Version") == 0 ){
-                // Run setup
-                console.sendMessage("Running setup");
-                setup();
-                console.sendMessage("Setup complete");
-            }
-
-            Bukkit.getPluginManager().registerEvents(new BlockBreak(), this);
-            Bukkit.getPluginManager().registerEvents(new ChestOpen(), this);
-
-            Chest.loadChestItems();
+        if( getConfig().getInt("Config Version") == 0 ){
+            // Run setup
+            console.sendMessage("Running setup");
+            setup();
+            console.sendMessage("Setup complete");
         }
+
+        Bukkit.getPluginManager().registerEvents(new BlockBreak(), this);
+        Bukkit.getPluginManager().registerEvents(new ChestOpen(), this);
+
+        Chest.loadChestItems();
 
 
     }

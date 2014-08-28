@@ -18,6 +18,7 @@ public class BlockBreak implements Listener {
     @EventHandler
     public void onBlockBreak( BlockBreakEvent e ) throws IOException {
         if( !e.getBlock().getWorld().getName().equalsIgnoreCase(Main.getInstance().getConfig().getString("World")) && !Main.getInstance().getConfig().getString("World").equalsIgnoreCase("all") ) return;
+        if( e.getBlock() == null || e.getBlock().getType() == Material.AIR ) return;
         if( e.getBlock().getType() == Material.CHEST ){
             ContainerBlock cb = (ContainerBlock) e.getBlock().getState();
             if( cb.getInventory().getItem(0) == null || cb.getInventory().getItem(0).getType() == Material.AIR ) return;
